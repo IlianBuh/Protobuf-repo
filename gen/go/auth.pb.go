@@ -231,7 +231,7 @@ func (x *SignUpResponse) GetToken() string {
 
 type IsAdminRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uuid          uint64                 `protobuf:"varint,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Login         string                 `protobuf:"bytes,1,opt,name=login,proto3" json:"login,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -266,11 +266,11 @@ func (*IsAdminRequest) Descriptor() ([]byte, []int) {
 	return file_auth_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *IsAdminRequest) GetUuid() uint64 {
+func (x *IsAdminRequest) GetLogin() string {
 	if x != nil {
-		return x.Uuid
+		return x.Login
 	}
-	return 0
+	return ""
 }
 
 type IsAdminResponse struct {
@@ -334,9 +334,9 @@ const file_auth_proto_rawDesc = "" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x03 \x01(\tR\bpassword\"&\n" +
 	"\x0eSignUpResponse\x12\x14\n" +
-	"\x05token\x18\x01 \x01(\tR\x05token\"$\n" +
-	"\x0eIsAdminRequest\x12\x12\n" +
-	"\x04uuid\x18\x01 \x01(\x04R\x04uuid\"+\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\"&\n" +
+	"\x0eIsAdminRequest\x12\x14\n" +
+	"\x05login\x18\x01 \x01(\tR\x05login\"+\n" +
 	"\x0fIsAdminResponse\x12\x18\n" +
 	"\aisAdmin\x18\x01 \x01(\bR\aisAdmin2\xa8\x01\n" +
 	"\x04Auth\x123\n" +

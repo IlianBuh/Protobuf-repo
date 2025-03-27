@@ -31,7 +31,7 @@ message SignUpResponse {
 }
 
 message IsAdminRequest {
-  uint64 uuid = 1;
+  string login = 1;
 
 }
 
