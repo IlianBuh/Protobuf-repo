@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "ilianBuh.sso.v1;ssov1";
+
+service Auth {
+  rpc SignIn(SignInRequest) returns (SignInResponse);
+  rpc SignUp(SignUpRequest) returns (SignUpResponse);
+  rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse);
+}
+
+message SignInRequest {
+  string login    = 1;
+  string password = 2;
+  uint32 appID    = 3;
+}
+
+message SignInResponse {
+  string token = 1;
+}
+
+message SignUpRequest {
+  string login    = 1;
+  string email    = 2;
+  string password = 3;
+}
+
+message SignUpResponse {
+  string token = 1;
+}
+
+message IsAdminRequest {
+  uint64 uuid = 1;
+
+}
+
+message IsAdminResponse {
+  bool isAdmin = 1;
+}
