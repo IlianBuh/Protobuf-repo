@@ -363,7 +363,7 @@ func (x *CreateAdminRequest) GetLogin() string {
 
 type CreateAdminResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Login         string                 `protobuf:"bytes,1,opt,name=login,proto3" json:"login,omitempty"`
+	Ok            bool                   `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -398,11 +398,11 @@ func (*CreateAdminResponse) Descriptor() ([]byte, []int) {
 	return file_auth_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *CreateAdminResponse) GetLogin() string {
+func (x *CreateAdminResponse) GetOk() bool {
 	if x != nil {
-		return x.Login
+		return x.Ok
 	}
-	return ""
+	return false
 }
 
 var File_auth_proto protoreflect.FileDescriptor
@@ -428,9 +428,9 @@ const file_auth_proto_rawDesc = "" +
 	"\x0fIsAdminResponse\x12\x18\n" +
 	"\aisAdmin\x18\x01 \x01(\bR\aisAdmin\"*\n" +
 	"\x12CreateAdminRequest\x12\x14\n" +
-	"\x05login\x18\x01 \x01(\tR\x05login\"+\n" +
-	"\x13CreateAdminResponse\x12\x14\n" +
-	"\x05login\x18\x01 \x01(\tR\x05login2\xec\x01\n" +
+	"\x05login\x18\x01 \x01(\tR\x05login\"%\n" +
+	"\x13CreateAdminResponse\x12\x0e\n" +
+	"\x02ok\x18\x01 \x01(\bR\x02ok2\xec\x01\n" +
 	"\x04Auth\x123\n" +
 	"\x06SignIn\x12\x13.auth.SignInRequest\x1a\x14.auth.SignInResponse\x123\n" +
 	"\x06SignUp\x12\x13.auth.SignUpRequest\x1a\x14.auth.SignUpResponse\x126\n" +

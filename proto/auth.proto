@@ -46,5 +46,7 @@ message CreateAdminRequest {
 }
 
 message CreateAdminResponse {
-  string login = 1;
+  bool ok = 1;
 }
+
+
