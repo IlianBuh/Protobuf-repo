@@ -8,6 +8,7 @@ service Auth {
   rpc SignIn(SignInRequest) returns (SignInResponse);
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse);
+  rpc CreateAdmin(CreateAdminRequest) returns (CreateAdminResponse);
 }
 
 message SignInRequest {
@@ -37,4 +38,13 @@ message IsAdminRequest {
 
 message IsAdminResponse {
   bool isAdmin = 1;
+}
+
+
+message CreateAdminRequest {
+  string login = 1;
+}
+
+message CreateAdminResponse {
+  string login = 1;
 }

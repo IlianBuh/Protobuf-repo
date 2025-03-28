@@ -317,6 +317,94 @@ func (x *IsAdminResponse) GetIsAdmin() bool {
 	return false
 }
 
+type CreateAdminRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Login         string                 `protobuf:"bytes,1,opt,name=login,proto3" json:"login,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateAdminRequest) Reset() {
+	*x = CreateAdminRequest{}
+	mi := &file_auth_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateAdminRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAdminRequest) ProtoMessage() {}
+
+func (x *CreateAdminRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAdminRequest.ProtoReflect.Descriptor instead.
+func (*CreateAdminRequest) Descriptor() ([]byte, []int) {
+	return file_auth_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CreateAdminRequest) GetLogin() string {
+	if x != nil {
+		return x.Login
+	}
+	return ""
+}
+
+type CreateAdminResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Login         string                 `protobuf:"bytes,1,opt,name=login,proto3" json:"login,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateAdminResponse) Reset() {
+	*x = CreateAdminResponse{}
+	mi := &file_auth_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateAdminResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAdminResponse) ProtoMessage() {}
+
+func (x *CreateAdminResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAdminResponse.ProtoReflect.Descriptor instead.
+func (*CreateAdminResponse) Descriptor() ([]byte, []int) {
+	return file_auth_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CreateAdminResponse) GetLogin() string {
+	if x != nil {
+		return x.Login
+	}
+	return ""
+}
+
 var File_auth_proto protoreflect.FileDescriptor
 
 const file_auth_proto_rawDesc = "" +
@@ -338,11 +426,16 @@ const file_auth_proto_rawDesc = "" +
 	"\x0eIsAdminRequest\x12\x14\n" +
 	"\x05login\x18\x01 \x01(\tR\x05login\"+\n" +
 	"\x0fIsAdminResponse\x12\x18\n" +
-	"\aisAdmin\x18\x01 \x01(\bR\aisAdmin2\xa8\x01\n" +
+	"\aisAdmin\x18\x01 \x01(\bR\aisAdmin\"*\n" +
+	"\x12CreateAdminRequest\x12\x14\n" +
+	"\x05login\x18\x01 \x01(\tR\x05login\"+\n" +
+	"\x13CreateAdminResponse\x12\x14\n" +
+	"\x05login\x18\x01 \x01(\tR\x05login2\xec\x01\n" +
 	"\x04Auth\x123\n" +
 	"\x06SignIn\x12\x13.auth.SignInRequest\x1a\x14.auth.SignInResponse\x123\n" +
 	"\x06SignUp\x12\x13.auth.SignUpRequest\x1a\x14.auth.SignUpResponse\x126\n" +
-	"\aIsAdmin\x12\x14.auth.IsAdminRequest\x1a\x15.auth.IsAdminResponseB\x17Z\x15ilianBuh.sso.v1;ssov1b\x06proto3"
+	"\aIsAdmin\x12\x14.auth.IsAdminRequest\x1a\x15.auth.IsAdminResponse\x12B\n" +
+	"\vCreateAdmin\x12\x18.auth.CreateAdminRequest\x1a\x19.auth.CreateAdminResponseB\x17Z\x15ilianBuh.sso.v1;ssov1b\x06proto3"
 
 var (
 	file_auth_proto_rawDescOnce sync.Once
@@ -356,24 +449,28 @@ func file_auth_proto_rawDescGZIP() []byte {
 	return file_auth_proto_rawDescData
 }
 
-var file_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_auth_proto_goTypes = []any{
-	(*SignInRequest)(nil),   // 0: auth.SignInRequest
-	(*SignInResponse)(nil),  // 1: auth.SignInResponse
-	(*SignUpRequest)(nil),   // 2: auth.SignUpRequest
-	(*SignUpResponse)(nil),  // 3: auth.SignUpResponse
-	(*IsAdminRequest)(nil),  // 4: auth.IsAdminRequest
-	(*IsAdminResponse)(nil), // 5: auth.IsAdminResponse
+	(*SignInRequest)(nil),       // 0: auth.SignInRequest
+	(*SignInResponse)(nil),      // 1: auth.SignInResponse
+	(*SignUpRequest)(nil),       // 2: auth.SignUpRequest
+	(*SignUpResponse)(nil),      // 3: auth.SignUpResponse
+	(*IsAdminRequest)(nil),      // 4: auth.IsAdminRequest
+	(*IsAdminResponse)(nil),     // 5: auth.IsAdminResponse
+	(*CreateAdminRequest)(nil),  // 6: auth.CreateAdminRequest
+	(*CreateAdminResponse)(nil), // 7: auth.CreateAdminResponse
 }
 var file_auth_proto_depIdxs = []int32{
 	0, // 0: auth.Auth.SignIn:input_type -> auth.SignInRequest
 	2, // 1: auth.Auth.SignUp:input_type -> auth.SignUpRequest
 	4, // 2: auth.Auth.IsAdmin:input_type -> auth.IsAdminRequest
-	1, // 3: auth.Auth.SignIn:output_type -> auth.SignInResponse
-	3, // 4: auth.Auth.SignUp:output_type -> auth.SignUpResponse
-	5, // 5: auth.Auth.IsAdmin:output_type -> auth.IsAdminResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	6, // 3: auth.Auth.CreateAdmin:input_type -> auth.CreateAdminRequest
+	1, // 4: auth.Auth.SignIn:output_type -> auth.SignInResponse
+	3, // 5: auth.Auth.SignUp:output_type -> auth.SignUpResponse
+	5, // 6: auth.Auth.IsAdmin:output_type -> auth.IsAdminResponse
+	7, // 7: auth.Auth.CreateAdmin:output_type -> auth.CreateAdminResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -390,7 +487,7 @@ func file_auth_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_proto_rawDesc), len(file_auth_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
