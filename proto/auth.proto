@@ -14,7 +14,6 @@ service Auth {
 message SignInRequest {
   string login    = 1;
   string password = 2;
-  uint32 appID    = 3;
 }
 
 message SignInResponse {

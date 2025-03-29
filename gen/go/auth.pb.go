@@ -25,7 +25,6 @@ type SignInRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Login         string                 `protobuf:"bytes,1,opt,name=login,proto3" json:"login,omitempty"`
 	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
-	AppID         uint32                 `protobuf:"varint,3,opt,name=appID,proto3" json:"appID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -72,13 +71,6 @@ func (x *SignInRequest) GetPassword() string {
 		return x.Password
 	}
 	return ""
-}
-
-func (x *SignInRequest) GetAppID() uint32 {
-	if x != nil {
-		return x.AppID
-	}
-	return 0
 }
 
 type SignInResponse struct {
@@ -410,11 +402,10 @@ var File_auth_proto protoreflect.FileDescriptor
 const file_auth_proto_rawDesc = "" +
 	"\n" +
 	"\n" +
-	"auth.proto\x12\x04auth\"W\n" +
+	"auth.proto\x12\x04auth\"A\n" +
 	"\rSignInRequest\x12\x14\n" +
 	"\x05login\x18\x01 \x01(\tR\x05login\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x14\n" +
-	"\x05appID\x18\x03 \x01(\rR\x05appID\"&\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\"&\n" +
 	"\x0eSignInResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\"W\n" +
 	"\rSignUpRequest\x12\x14\n" +
